@@ -2,6 +2,7 @@ package com.android.example.rssreader
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.RecyclerView
 import com.android.example.rssreader.model.Item
 import com.android.example.rssreader.model.RSSWrapper
 import okhttp3.OkHttpClient
@@ -30,6 +31,9 @@ class FeedActivity : AppCompatActivity() {
 
         // ========== PHASE 1 : from here ==========================================================
         // TODO: Add RecyclerView here based on Item objects
+        val rv: RecyclerView = findViewById<RecyclerView>(R.id.my_recycler_view)
+ //       rv.layoutManager
+ //       rv.adapter
         // ========== PHASE 1 : to here ============================================================
 
 
