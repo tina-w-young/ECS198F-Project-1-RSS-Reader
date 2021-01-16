@@ -45,7 +45,7 @@ class FeedActivity : AppCompatActivity() {
 
     /**
      * This will run if fetching the UN News Articles was successful. Add logic here that will update
-     * the list corresponding to your RecyclerView and make sure to notify the RescyclerView adapter
+     * the list corresponding to your RecyclerView and make sure to notify the RecyclerView adapter
      * that the list has changed
      */
     private fun onRssResponse(call: Call<RSSWrapper?>?, response: Response<RSSWrapper?>) {
@@ -56,6 +56,9 @@ class FeedActivity : AppCompatActivity() {
             }
 
             // TODO PHASE 1 : Update RecyclerView list and notify data set changed
+            val rv: RecyclerView = findViewById<RecyclerView>(R.id.my_recycler_view)
+            rv.layoutManager = LinearLayoutManager(this@FeedActivity)
+            rv.adapter = RSSFeedAdapter(rssFeedList)
         }
     }
 

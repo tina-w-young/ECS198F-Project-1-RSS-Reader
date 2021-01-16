@@ -2,6 +2,7 @@ package com.android.example.rssreader
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 
@@ -16,7 +17,6 @@ class MainActivity : AppCompatActivity() {
         //  found on https://news.un.org/en/rss-feeds
         // ========== PHASE 3 : to here ============================================================
 
-
         // ========== PHASE 3 : Remove this section if needed from here ============================
         // TODO: Remove this section
         /* Send User to FeedActivity to view UN News Article by Topic */
@@ -28,5 +28,6 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("feed", topic)
         this.startActivity(intent)
         // ========== PHASE 3 : to here ============================================================
+
     }
 }
