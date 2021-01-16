@@ -1,18 +1,37 @@
 package com.android.example.rssreader
 
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.android.example.rssreader.model.Item
+import org.w3c.dom.Text
 
 class RSSFeedAdapter(private val rssFeedList: MutableList<Item>):RecyclerView.Adapter<RSSFeedAdapter.RSSFeedViewHolder>() {
-    class RSSFeedViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
-<<<<<<< HEAD
-        val articleentry = itemView.findViewById<LinearLayout>(R.id.article_entry)
-=======
-        val articleentry = itemView.findViewById<LinearLayout>(R.id.articleentry)
-        //hi
->>>>>>> 6747ea86ca28fab18eabed22cdf3cc371e91a83c
+    class RSSFeedViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
+        val article_entry: LinearLayout = itemView.findViewById(R.id.article_entry)
+        val date : TextView = itemView.findViewById(R.id.date)
+        val title : TextView = itemView.findViewById(R.id.title)
+        val description : TextView = itemView.findViewById(R.id.description)
     }
 
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RSSFeedViewHolder {
+        val layoutInflater = LayoutInflater.from(parent.context)
+        val view = layoutInflater.inflate(R.layout.rss_feed_item, parent, false)
+        return RSSFeedViewHolder(view)
+    }
+
+    override fun getItemCount(): Int = rssFeedList.size
+
+    override fun onBindViewHolder(holder: RSSFeedViewHolder, position: Int) {
+        holder.date.text = rssFeedList[position].pubDate
+        holder.title.text = rssFeedList[position].title
+        holder.description.text = rssFeedList[position].description
+        holder.article_entry.setOnClickListener {
+            Toast.makeText(it.context, holder.title.text, Toast.LENGTH_SHORT).show()
+        }
+    }
 }
