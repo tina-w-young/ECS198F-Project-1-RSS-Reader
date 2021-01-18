@@ -2,6 +2,7 @@ package com.android.example.rssreader
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.example.rssreader.model.Item
@@ -37,11 +38,9 @@ class FeedActivity : AppCompatActivity() {
         rv.adapter = RSSFeedAdapter(rssFeedList)
         // ========== PHASE 1 : to here ============================================================
 
-
         /* Fetch UN Article Feeds */
         fetchRssFeed(topicUrl, ::onRssResponse, ::onRssFailure)
     }
-
 
     /**
      * This will run if fetching the UN News Articles was successful. Add logic here that will update

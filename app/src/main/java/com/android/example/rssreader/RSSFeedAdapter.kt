@@ -1,5 +1,7 @@
 package com.android.example.rssreader
 
+import android.content.Intent
+import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +10,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.android.example.rssreader.model.Item
+import kotlinx.android.parcel.Parcelize
+import org.simpleframework.xml.Element
+import org.simpleframework.xml.Root
 import org.w3c.dom.Text
 
 class RSSFeedAdapter(private val rssFeedList: MutableList<Item>):RecyclerView.Adapter<RSSFeedAdapter.RSSFeedViewHolder>() {
