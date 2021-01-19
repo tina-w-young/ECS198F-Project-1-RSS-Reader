@@ -1,23 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
 xmlns:android="http://schemas.android.com/apk/res/android"
-android:id="@+id/article_entry"
+android:id="@+id/single_article_entry"
 android:layout_width="match_parent"
 android:layout_height="wrap_content"
 android:orientation="vertical">
 
-<Button
-    android:id="@+id/button_1"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Button"
-    android:background="@color/yellow"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/article_date"
+    />
 
-<Button
-    android:id="@+id/button_2"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Button"
-    android:background="@color/pink"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/article_title"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/un_logo"
+        android:id="@+id/article_image"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/article_description"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
 
 </LinearLayout>

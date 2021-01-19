@@ -26,7 +26,6 @@ class TopicAdapter(private val topicList: MutableList<FeedTopic>): RecyclerView.
     override fun onBindViewHolder(holder: TopicViewHolder, position: Int) {
         holder.topic_title.text = topicList[position].topic
         holder.topic_entry.setOnClickListener {
-         //   Toast.makeText(it.context, holder.topic_title.text, Toast.LENGTH_SHORT).show()
             val theTopic = topicList[position]
             val intent = Intent(it.context, FeedActivity::class.java)
             intent.putExtra("feed", theTopic)
