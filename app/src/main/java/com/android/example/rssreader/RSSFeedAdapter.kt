@@ -32,12 +32,11 @@ class RSSFeedAdapter(private val rssFeedList: MutableList<Item>):RecyclerView.Ad
     override fun getItemCount(): Int = rssFeedList.size
 
     override fun onBindViewHolder(holder: RSSFeedViewHolder, position: Int) {
-        holder.date.text = rssFeedList[position].pubDate
+        holder.date.text = rssFeedList[position].pubDate.toString()
         holder.title.text = rssFeedList[position].title
-        holder.description.text = rssFeedList[position].description
+        holder.description.text = rssFeedList[position].description.substring(1,20)
         holder.article_entry.setOnClickListener {
             val intent = Intent(it.context, NewsArticleActivity::class.java)
-          //  intent.putExtra("Item", rssFeedList[position])
             intent.putExtra("Item", Item(rssFeedList[position].title, rssFeedList[position].link, rssFeedList[position].description, rssFeedList[position].pubDate))
             it.context.startActivity(intent)
         }
