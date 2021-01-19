@@ -36,7 +36,9 @@ class RSSFeedAdapter(private val rssFeedList: MutableList<Item>):RecyclerView.Ad
         holder.title.text = rssFeedList[position].title
         holder.description.text = rssFeedList[position].description
         holder.article_entry.setOnClickListener {
-            Toast.makeText(it.context, holder.title.text, Toast.LENGTH_SHORT).show()
+           // Toast.makeText(it.context, holder.title.text, Toast.LENGTH_SHORT).show()
+            val intent = Intent(it.context, NewsArticleActivity::class.java)
+            it.context.startActivity(intent)
         }
     }
 }
