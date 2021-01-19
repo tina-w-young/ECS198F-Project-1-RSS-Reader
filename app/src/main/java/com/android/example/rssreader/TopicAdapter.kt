@@ -6,8 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 
 
@@ -29,7 +27,9 @@ class TopicAdapter(private val topicList: MutableList<FeedTopic>): RecyclerView.
         holder.topic_title.text = topicList[position].topic
         holder.topic_entry.setOnClickListener {
          //   Toast.makeText(it.context, holder.topic_title.text, Toast.LENGTH_SHORT).show()
+            val theTopic = topicList[position]
             val intent = Intent(it.context, FeedActivity::class.java)
+            intent.putExtra("feed", theTopic)
             it.context.startActivity(intent)
         }
     }
