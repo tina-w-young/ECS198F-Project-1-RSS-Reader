@@ -3,6 +3,8 @@ package com.android.example.rssreader
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -27,7 +29,7 @@ class NewsArticleActivity : AppCompatActivity() {
         article_title.text = item.title
         article_description.text = item.description
 
-        findViewById<TextView>(R.id.article_link).setOnClickListener{
+        findViewById<ImageButton>(R.id.article_link).setOnClickListener{
             val webpage: Uri = Uri.parse(item.link)
             val intent = Intent(Intent.ACTION_VIEW, webpage)
             if (intent.resolveActivity(packageManager) != null) {
