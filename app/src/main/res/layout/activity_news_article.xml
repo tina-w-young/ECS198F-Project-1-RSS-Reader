@@ -42,12 +42,12 @@
                 android:layout_height="wrap_content"
                 android:textSize="40dp" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/article_link"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:autoLink="all"
-                android:src="@drawable/circle" />
+                android:background="@drawable/ic_open_link"/>
 
         </LinearLayout>
     </ScrollView>

@@ -29,7 +29,7 @@ class NewsArticleActivity : AppCompatActivity() {
         article_title.text = item.title
         article_description.text = item.description
 
-        findViewById<ImageButton>(R.id.article_link).setOnClickListener{
+        findViewById<Button>(R.id.article_link).setOnClickListener{
             val webpage: Uri = Uri.parse(item.link)
             val intent = Intent(Intent.ACTION_VIEW, webpage)
             if (intent.resolveActivity(packageManager) != null) {
