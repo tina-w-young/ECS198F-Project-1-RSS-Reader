@@ -22,7 +22,6 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
-            android:fontFamily="@/font/roboto_regular"
             android:text="@string/title"
             android:textColor="@color/black"
             android:gravity="center"
@@ -31,7 +30,7 @@
 
         <ImageView
             android:id="@+id/next_button"
-            android:layout_width="30dp"
+            android:layout_width="28dp"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:src="@drawable/right_arrow_icon" />

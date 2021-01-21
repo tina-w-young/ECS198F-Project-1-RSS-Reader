@@ -1,8 +1,11 @@
 package com.android.example.rssreader
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
-import android.widget.LinearLayout
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.example.rssreader.model.Item
@@ -68,26 +71,30 @@ class FeedActivity : AppCompatActivity() {
     private fun onRssFailure(call: Call<RSSWrapper?>?, t: Throwable?) {
         // TODO PHASE 1: Log error here since request failed
         // TODO PHASE 1: Make toast telling user articles could not be fetched
+        Toast.makeText(this, "Articles could not be fetched", Toast.LENGTH_LONG).show()
+
+
+
+        /**
+         * You wont need to update this function. We will cover more in depth what is happening in this
+         * function later on in the course, so do not worry if it does not make complete sense.
+         *
+         * Here we are using a REST client library to fetch all the UN News Articles under the category
+         * @topicUrl. We have two callback functions @onRssResponse and @onRssFailure which are defined
+         * above for you to add on to.
+         *
+         * Note: @topicUrl is the section in the UN RSS Feed url between /topic/ and /feed/
+         *
+         * ex1:
+         *      topicUrl = "health"
+         *      UN RSS Feed url = https://news.un.org/feed/subscribe/en/news/topic/health/feed/rss.xml
+         *
+         * ex2:
+         *      topicUrl = "human-rights"
+         *      UN RSS Feed url = https://news.un.org/feed/subscribe/en/news/topic/human-rights/feed/rss.xml
+         */
     }
 
-    /**
-     * You wont need to update this function. We will cover more in depth what is happening in this
-     * function later on in the course, so do not worry if it does not make complete sense.
-     *
-     * Here we are using a REST client library to fetch all the UN News Articles under the category
-     * @topicUrl. We have two callback functions @onRssResponse and @onRssFailure which are defined
-     * above for you to add on to.
-     *
-     * Note: @topicUrl is the section in the UN RSS Feed url between /topic/ and /feed/
-     *
-     * ex1:
-     *      topicUrl = "health"
-     *      UN RSS Feed url = https://news.un.org/feed/subscribe/en/news/topic/health/feed/rss.xml
-     *
-     * ex2:
-     *      topicUrl = "human-rights"
-     *      UN RSS Feed url = https://news.un.org/feed/subscribe/en/news/topic/human-rights/feed/rss.xml
-     */
     private fun fetchRssFeed(topicUrl: String, onRssResponse: (call: Call<RSSWrapper?>?, response: Response<RSSWrapper?>) -> Unit, onRssFailure: (call: Call<RSSWrapper?>?, t: Throwable?) -> Unit) {
         /* Define how API requests are made to the rss feed  */
         val retrofit : Retrofit = Retrofit.Builder()
