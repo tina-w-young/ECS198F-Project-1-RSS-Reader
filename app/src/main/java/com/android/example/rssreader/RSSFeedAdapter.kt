@@ -34,7 +34,7 @@ class RSSFeedAdapter(private val rssFeedList: MutableList<Item>):RecyclerView.Ad
     override fun onBindViewHolder(holder: RSSFeedViewHolder, position: Int) {
         holder.date.text = rssFeedList[position].pubDate
         holder.title.text = rssFeedList[position].title
-        holder.description.text = rssFeedList[position].description.substring(0,43) + "..."
+        holder.description.text = rssFeedList[position].description.substring(0,36) + "..."
         holder.article_entry.setOnClickListener {
             val intent = Intent(it.context, NewsArticleActivity::class.java)
             intent.putExtra("Item", Item(rssFeedList[position].title, rssFeedList[position].link, rssFeedList[position].description, rssFeedList[position].pubDate))
