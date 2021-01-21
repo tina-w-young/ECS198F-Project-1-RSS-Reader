@@ -18,10 +18,10 @@
             android:orientation="vertical" >
 
             <TextView
-                        android:id="@+id/article_date"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="20dp" />
+                android:id="@+id/article_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/article_title"
@@ -31,10 +31,10 @@
                 android:textStyle="bold" />
 
             <ImageView
-                        android:id="@+id/article_image"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/un_logo" />
+                android:id="@+id/article_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/un_logo" />
 
             <TextView
                 android:id="@+id/article_description"

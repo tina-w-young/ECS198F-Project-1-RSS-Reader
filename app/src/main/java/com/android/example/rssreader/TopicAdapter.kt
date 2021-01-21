@@ -5,13 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 
 class TopicAdapter(private val topicList: MutableList<FeedTopic>): RecyclerView.Adapter<TopicAdapter.TopicViewHolder>() {
     class TopicViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val topic_entry: LinearLayout = itemView.findViewById(R.id.topic_entry)
+        val topic_entry: RelativeLayout = itemView.findViewById(R.id.topic_entry)
         val topic_title : TextView = itemView.findViewById(R.id.topic)
     }
 

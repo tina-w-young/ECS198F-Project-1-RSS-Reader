@@ -1,26 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/topic_entry"
+    android:id="@+id/topic_entry_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/topic"
-        android:layout_width="370dp"
+    <RelativeLayout
+        android:id="@+id/topic_entry"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="10dp"
+        android:orientation="horizontal"
         android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
         android:background="@color/white"
-        android:fontFamily="@/font/roboto_regular"
-        android:text="@string/title"
-        android:textColor="@color/black"
-        android:textSize="25dp"
-        android:textStyle="bold"/>
+        android:padding="15dp"
+        android:layout_marginHorizontal="15dp">
 
+        <TextView
+            android:id="@+id/topic"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:fontFamily="@/font/roboto_regular"
+            android:text="@string/title"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
 
-    <!-- TODO: PHASE 2 -->
+        <ImageView
+            android:id="@+id/next_button"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/right_arrow_icon" />
+
+    </RelativeLayout>
 
 </LinearLayout>
