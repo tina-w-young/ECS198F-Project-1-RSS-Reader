@@ -8,16 +8,19 @@
 
     <TextView
         android:id="@+id/topic"
-        android:layout_width="350dp"
-        android:layout_height="75dp"
+        android:layout_width="370dp"
+        android:layout_height="100dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="10dp"
+        android:layout_gravity="center"
         android:background="@color/white"
-        android:gravity="center_vertical|left"
+        android:fontFamily="@/font/roboto_regular"
         android:text="@string/title"
         android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+        android:textSize="25dp"
+        android:textStyle="bold"/>
+
+
     <!-- TODO: PHASE 2 -->
 
 </LinearLayout>
