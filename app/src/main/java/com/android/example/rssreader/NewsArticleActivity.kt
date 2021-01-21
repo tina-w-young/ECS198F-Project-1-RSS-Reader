@@ -36,6 +36,13 @@ class NewsArticleActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+        findViewById<Button>(R.id.article_link2).setOnClickListener{
+            val webpage: Uri = Uri.parse(item.link)
+            val intent = Intent(Intent.ACTION_VIEW, webpage)
+            if (intent.resolveActivity(packageManager) != null) {
+                startActivity(intent)
+            }
+        }
 
 
     }
