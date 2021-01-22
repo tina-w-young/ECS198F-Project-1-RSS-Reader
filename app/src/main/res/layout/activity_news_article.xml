@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/single_article_entry"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,12 +9,14 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp">
 
             <TextView
                 android:id="@+id/article_date"
@@ -43,39 +45,35 @@
                 android:textColor="@color/black"
                 android:textFontWeight="400"
                 android:textSize="23dp" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/black">
-
-                <Button
-                    android:id="@+id/article_link2"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:layout_alignParentBottom="true"
-                    android:autoLink="all"
-                    android:background="@color/bluevioletpurple"
-                    android:paddingLeft="12dp"
-                    android:text="VISIT WEBSITE"
-                    android:textAlignment="viewStart"
-                    android:textColor="@color/white"
-                    android:textSize="20dp" />
-
-                <Button
-                    android:id="@+id/article_link"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_alignTop="@id/article_link2"
-                    android:layout_alignRight="@id/article_link2"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="-20dp"
-                    android:autoLink="all"
-                    android:background="@mipmap/ic_open_link_round" />
-
-            </RelativeLayout>
-
         </LinearLayout>
     </ScrollView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</LinearLayout>
+        <Button
+            android:id="@+id/article_link2"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:autoLink="all"
+            android:background="@color/bluevioletpurple"
+            android:paddingLeft="12dp"
+            android:text="VISIT WEBSITE"
+            android:textAlignment="viewStart"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/article_link"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignTop="@id/article_link2"
+            android:layout_alignRight="@id/article_link2"
+            android:layout_gravity="end"
+            android:layout_marginTop="-20dp"
+            android:autoLink="all"
+            android:background="@mipmap/ic_open_link_round" />
+
+    </RelativeLayout>
+</RelativeLayout>
