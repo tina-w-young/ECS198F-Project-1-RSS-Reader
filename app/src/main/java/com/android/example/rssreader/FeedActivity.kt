@@ -32,6 +32,7 @@ class FeedActivity : AppCompatActivity() {
 
         val feedTopic : FeedTopic = intent.getParcelableExtra<FeedTopic>("feed")!!
         val topicUrl = feedTopic.link
+        title = feedTopic.topic
 
 
         // ========== PHASE 1 : from here ==========================================================
