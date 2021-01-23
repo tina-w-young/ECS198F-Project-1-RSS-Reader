@@ -39,21 +39,13 @@ class NewsArticleActivity : AppCompatActivity() {
             }
         }
 
-       //findViewById<Button>(R.id.article_link2).setOnClickListener{
-         //   val webpage: Uri = Uri.parse(item.link)
-           // val intent = Intent(Intent.ACTION_VIEW, webpage)
-            //if (intent.resolveActivity(packageManager) != null) {
-              //  startActivity(intent)
-            //}
-        //}
-
-//        val fab: View = findViewById(R.id.article_link2)
-//        fab.setOnClickListener { view ->
-//            val webpage: Uri = Uri.parse(item.link)
-//              val intent = Intent(Intent.ACTION_VIEW, webpage)
-//            if (intent.resolveActivity(packageManager) != null) {
-//                startActivity(intent)
-//            }
-//        }
+        val fab: View = findViewById(R.id.article_link2)
+        fab.setOnClickListener { view ->
+            val webpage: Uri = Uri.parse(item.link)
+              val intent = Intent(Intent.ACTION_VIEW, webpage)
+            if (intent.resolveActivity(packageManager) != null) {
+                startActivity(intent)
+            }
+        }
     }
 }

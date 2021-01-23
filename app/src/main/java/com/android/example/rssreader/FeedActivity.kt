@@ -72,9 +72,7 @@ class FeedActivity : AppCompatActivity() {
     private fun onRssFailure(call: Call<RSSWrapper?>?, t: Throwable?) {
         // TODO PHASE 1: Log error here since request failed
         // TODO PHASE 1: Make toast telling user articles could not be fetched
-        Toast.makeText(this, "Articles could not be fetched", Toast.LENGTH_LONG).show()
-
-
+        Toast.makeText(this, "Articles could not be fetched", Toast.LENGTH_SHORT).show()
 
         /**
          * You wont need to update this function. We will cover more in depth what is happening in this
