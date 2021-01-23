@@ -25,7 +25,8 @@ class NewsArticleActivity : AppCompatActivity() {
         val article_description: TextView = findViewById<TextView>(R.id.article_description)
 
         val item : Item = intent.getParcelableExtra<Item>("Item")!!
-        article_date.text = item.pubDate
+        val DateList: List<String> = item.pubDate.split(" ")
+        article_date.text = DateList[2]+ " " + DateList[1] + ", " + DateList[3] + " - " + DateList[4].substring(0,5)
         article_title.text = item.title
         article_description.text = item.description
 
