@@ -3,6 +3,7 @@ package com.android.example.rssreader
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
@@ -37,14 +38,22 @@ class NewsArticleActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
-        findViewById<Button>(R.id.article_link2).setOnClickListener{
-            val webpage: Uri = Uri.parse(item.link)
-            val intent = Intent(Intent.ACTION_VIEW, webpage)
-            if (intent.resolveActivity(packageManager) != null) {
-                startActivity(intent)
-            }
-        }
 
+       //findViewById<Button>(R.id.article_link2).setOnClickListener{
+         //   val webpage: Uri = Uri.parse(item.link)
+           // val intent = Intent(Intent.ACTION_VIEW, webpage)
+            //if (intent.resolveActivity(packageManager) != null) {
+              //  startActivity(intent)
+            //}
+        //}
 
+//        val fab: View = findViewById(R.id.article_link2)
+//        fab.setOnClickListener { view ->
+//            val webpage: Uri = Uri.parse(item.link)
+//              val intent = Intent(Intent.ACTION_VIEW, webpage)
+//            if (intent.resolveActivity(packageManager) != null) {
+//                startActivity(intent)
+//            }
+//        }
     }
 }
