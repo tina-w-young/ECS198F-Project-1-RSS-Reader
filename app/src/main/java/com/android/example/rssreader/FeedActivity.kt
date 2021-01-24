@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -33,7 +34,6 @@ class FeedActivity : AppCompatActivity() {
         val feedTopic : FeedTopic = intent.getParcelableExtra<FeedTopic>("feed")!!
         val topicUrl = feedTopic.link
         title = feedTopic.topic
-
 
         // ========== PHASE 1 : from here ==========================================================
         // TODO: Add RecyclerView here based on Item objects
@@ -71,6 +71,7 @@ class FeedActivity : AppCompatActivity() {
      */
     private fun onRssFailure(call: Call<RSSWrapper?>?, t: Throwable?) {
         // TODO PHASE 1: Log error here since request failed
+        Log.d("error","articles could not be fetched")
         // TODO PHASE 1: Make toast telling user articles could not be fetched
         Toast.makeText(this, "Articles could not be fetched", Toast.LENGTH_SHORT).show()
 
